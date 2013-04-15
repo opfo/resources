@@ -11,6 +11,6 @@
 - Use fmdb wrapper giving back Mantle's native data objects 
 
 # Links
-- https://github.com/ccgus/fmdb
-- https://github.com/magicalpanda/MagicalRecord
-- https://github.com/github/Mantle
+- [github/fmdb](https://github.com/ccgus/fmdb)
+- [github/MagicalRecord](https://github.com/magicalpanda/MagicalRecord)
+- [github/Mantle](https://github.com/github/Mantle)
