@@ -1,4 +1,15 @@
 # Used to parse tags from a stackoverflow database
+require 'colorize'
+
+unless File.exists? "./so.sqlite" 
+  puts "=============================================================================".red
+  puts "ERROR ==> script cannot execute without the original db in the same directory"
+  puts ""
+  puts "FIX   ==> Make sure that the original db is in this dictory and is named so.sqlite"
+  puts "=============================================================================".red
+  abort
+end
+
 require 'sqlite3'
 
 TAGS_ROW = 16
