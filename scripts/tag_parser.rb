@@ -10,6 +10,8 @@ File.delete AUX_DB if File.exists? AUX_DB
 sourceDB = SQLite3::Database.new("./so.sqlite")
 destinationDB = SQLite3::Database.new(AUX_DB)
 
+# Convenience methods
+
 def tokenize_string(string)
   string.scan /<(\w+)>/
 end
@@ -40,6 +42,7 @@ rows.each do |row|
   parsed_tags = tokenize_string(raw_tags)
   parsed_tags.each {|tag| tags[tag.first] = true}
   parsed_tags.combination(2).to_a.each do |pair|
+    # For each combination, increment the frequency table
     flattened = pair.flatten.sort
     existing = get_pair(destinationDB, flattened[0], flattened[1])
     if existing.empty?
