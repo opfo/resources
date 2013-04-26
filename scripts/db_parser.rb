@@ -24,7 +24,7 @@ destinationDB = SQLite3::Database.new(AUX_DB)
 # Convenience methods
 
 def tokenize_string(string)
-  string.scan /<(\w+)>/
+  string.scan /<([^<>]+)>/
 end
 
 def get_pair(db, one, other)
