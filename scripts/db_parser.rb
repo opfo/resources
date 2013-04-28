@@ -121,7 +121,6 @@ index_queries.each do |query|
     destinationDB.execute(index_query_prototype, query)
   rescue Exception => ex
     puts ex.message.red
-    # puts "Error in query: #{query}".red
   end
 end
 
