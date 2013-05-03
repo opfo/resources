@@ -24,7 +24,7 @@ destinationDB = SQLite3::Database.new(AUX_DB)
 # Convenience methods
 
 def tokenize_string(string)
-  string.scan /<(\w+)>/
+  string.scan /<([^<>]+)>/
 end
 
 def get_pair(db, one, other)
@@ -39,11 +39,25 @@ def set_pair(db, one, other, n)
   db.execute("UPDATE tag_frequencies SET count=#{n} WHERE first_tag = '#{one}' AND second_tag = '#{other}'")
 end
 
+def parse_columns(columns)
+  columns_hash = {}
+  columns.each_with_index do |column, i|
+    columns_hash[column] = i
+  end
+  columns_hash
+end
+
+def _index_query(id, owner_display_name, body, title)
+  "INSERT INTO posts_index(post_id, index_string) VALUES('#{id}', '#{owner_display_name} #{body} #{title}')"
+end
+
 # Create tags table
+puts "Create tables tags and tag_frequencies".green
 destinationDB.execute("CREATE TABLE tags(id INTEGER PRIMARY KEY, name TEXT)")
 destinationDB.execute("CREATE TABLE tag_frequencies(first_tag TEXT, second_tag TEXT, count INTEGER)")
 
 # Select all posts with tags
+puts "Read tags from source db".green
 rows = sourceDB.execute("SELECT * FROM posts WHERE tags <> 'NULL'")
 
 tags = {}
@@ -65,10 +79,48 @@ rows.each do |row|
 end
 
 
+
 # Create tags
+puts "Write tags to aux DB".green
 queries = []
 tags.each_key do |tag|
   queries.push "INSERT INTO tags (name) VALUES ('#{tag}')"
 end
 
 queries.each {|query| destinationDB.execute query}
+
+
+#### Create the Full Text Search index
+puts "Create posts index".green
+destinationDB.execute("CREATE VIRTUAL TABLE posts_index USING fts4(post_id, index_string)")
+
+posts_select_query = %Q(SELECT "posts"."id", "posts"."body", "posts"."title", "users"."display_name" FROM "users", "posts" WHERE "posts"."owner_user_id" = "users"."id")
+
+columns = nil
+
+index_queries = []
+
+index_query_prototype = "INSERT INTO posts_index(post_id, index_string) VALUES(?, ?)"
+
+puts "Gather post data".green
+sourceDB.execute2(posts_select_query) do |row|
+  if columns == nil
+    columns = parse_columns(row)
+    puts columns.inspect
+  else
+    owner_display_name = row[columns["display_name"]]
+    body = row[columns["body"]]
+    title = row[columns["title"]]
+    id = row[columns["id"]]
+    index_queries << [id, "#{body} #{title} #{owner_display_name}".gsub(/<([^<>]+)>/, "")]
+  end
+end
+
+index_queries.each do |query| 
+  begin
+    destinationDB.execute(index_query_prototype, query)
+  rescue Exception => ex
+    puts ex.message.red
+  end
+end
+
