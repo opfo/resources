@@ -217,4 +217,21 @@ user_index_queries.each do |query|
   end
 end
 
+
+#### Create users_votes
+puts "Create users_votes".green
+
+users_votes_query = %Q{
+  CREATE TABLE "users_votes" (
+   "user_id" integer,
+   "post_id" integer,
+   "upvote" integer,
+  PRIMARY KEY("user_id","post_id")
+)
+}
+
+destinationDB.execute(users_votes_query)
+
 puts "Done".green
+
+
