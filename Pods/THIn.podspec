@@ -5,6 +5,6 @@ Pod::Spec.new do |s|
   s.author   = { 'James Montgomerie' => 'jamie@th.ingsmadeoutofotherthin.gs' }
   s.source   = { :git => 'https://github.com/th-in-gs/THIn.git' }
   s.platform = :ios
-  s.source_files = 'THIn/*.{h|m}'
+  s.source_files = 'THIn'
   s.requires_arc = true
 end
