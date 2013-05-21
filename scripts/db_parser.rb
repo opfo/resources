@@ -142,7 +142,6 @@ puts "Gather all posts data".green
 sourceDB.execute2(posts_select_query) do |row|
   if columns == nil
     columns = parse_columns(row)
-    puts columns.inspect
   else
     owner_display_name = row[columns["display_name"]]
     body  = row[columns["body"]]
@@ -233,6 +232,7 @@ users_votes_query = %Q{
 destinationDB.execute(users_votes_query)
 
 #### Create comments_votes
+puts "Create comments_votes".green
 
 comments_votes_query = %Q{
   CREATE TABLE "comments_votes" (
@@ -241,6 +241,8 @@ comments_votes_query = %Q{
     PRIMARY KEY("user_id", "comment_id")
 )
 }
+
+destinationDB.execute(comments_votes_query)
 
 puts "Done".green
 
