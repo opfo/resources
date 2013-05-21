@@ -56,8 +56,6 @@
 - Search for "Matt Sheppard"
 - Show his profile (explain details)
 - Scroll down
-- Show questions for Matt
-- Goto into question, proof its Matt's question (down)
 - Tap Users-tab to go back (cancel search)
 
 # My Profile
