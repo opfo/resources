@@ -36,8 +36,9 @@
    - Add free-text search "bacon"
 - Hit question-tab to go back completely
 - Search around (inc. users), show that it’s crazy fast.
-	- Singleton
-	- @Jon Skeet@
+   - Singleton
+   - @Jon Skeet@
+   - Change sort order to “Activity”
 - Tap “Search” to dismiss search stuff.
 - Catch some breath
 
