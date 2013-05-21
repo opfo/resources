@@ -7,6 +7,8 @@
 
 # Questions View
 
+- Seeing what is going on.
+- We see the title
 - Explain sidebar (icons and numbers)
 - Scroll up and down to show questions
 - Sort by Score
@@ -28,14 +30,15 @@
    - Mention .NET-tag being associated with question
    - Tap link in question to show internal web-browser
 - Go back to questions view to show search functionality
-   - Add another tag (wcf)
+   - Add another tag (wcf) - mention that they are related
    - More refinement - remove all (click button)
    - Add C#-tag
    - Add free-text search "bacon"
 - Hit question-tab to go back completely
-- Search for user: "Jon Skeet" (only has answers)
-- Tap second question
-- Hit question-tab for initial state/reset view
+- Search around (inc. users), show that it’s crazy fast.
+	- Singleton
+	- @Jon Skeet@
+- Tap “Search” to dismiss search stuff.
 - Catch some breath
 
 # Tag browser
@@ -44,7 +47,6 @@
    - Tap any tag, filters by it, shows number number matched questions in footer
 - Goto questions with tag, go back
 - Add another another tag, combined filter (footer changes)
-- Show associated questions again
 - Remove all tags
 - Double tap android
    - Explain nested nature of shown tags (related tags)
@@ -52,19 +54,15 @@
 - Show questions again
 - Mention passing search-phrase to searchbox (easy to refine for keywords now)
    - Type "insert"
-- Show question, scroll around
 - Tap "Tag browser"-tab again to reset
 
 # Users
 
 - Explain gravatar images being loaded by email hashes
 - Quickly explain what you see: reputation, votes, location and website for user
-- Scroll to load more (not all loaded initially)
 - Search for "Matt Sheppard"
 - Show his profile (explain details)
 - Scroll down
-- Show questions for Matt
-- Goto into question, proof its Matt's question (down)
 - Tap Users-tab to go back (cancel search)
 
 # My Profile
@@ -82,8 +80,6 @@
    - Ordered by actitity date
    - E.g. to check if answers are accepted
    - Plus: view count, score, comment count etc
-- Tap on first question
-- Tap on questions-tap to reset
 
 # Questions tab
 
