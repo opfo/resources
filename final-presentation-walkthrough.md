@@ -40,7 +40,6 @@
    - Tap any tag, filters by it, shows number number matched questions in footer
 - Goto questions with tag, go back
 - Add another another tag, combined filter (footer changes)
-- Show associated questions again
 - Remove all tags
 - Double tap android
    - Explain nested nature of shown tags (related tags)
