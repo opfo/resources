@@ -53,7 +53,6 @@
 
 - Explain gravatar images being loaded by email hashes
 - Quickly explain what you see: reputation, votes, location and website for user
-- Scroll to load more (not all loaded initially)
 - Search for "Matt Sheppard"
 - Show his profile (explain details)
 - Scroll down
