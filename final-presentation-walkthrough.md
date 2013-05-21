@@ -73,8 +73,6 @@
    - Ordered by actitity date
    - E.g. to check if answers are accepted
    - Plus: view count, score, comment count etc
-- Tap on first question
-- Tap on questions-tap to reset
 
 # Questions tab
 
