@@ -1,5 +1,7 @@
 # Questions View
 
+- Seeing what is going on.
+- We see the title
 - Explain sidebar (icons and numbers)
 - Scroll up and down to show questions
 - Sort by Score
@@ -21,14 +23,15 @@
    - Mention .NET-tag being associated with question
    - Tap link in question to show internal web-browser
 - Go back to questions view to show search functionality
-   - Add another tag (wcf)
+   - Add another tag (wcf) - mention that they are related
    - More refinement - remove all (click button)
    - Add C#-tag
    - Add free-text search "bacon"
 - Hit question-tab to go back completely
-- Search for user: "Jon Skeet" (only has answers)
-- Tap second question
-- Hit question-tab for initial state/reset view
+- Search around (inc. users), show that it’s crazy fast.
+	- Singleton
+	- @Jon Skeet@
+- Tap “Search” to dismiss search stuff.
 - Catch some breath
 
 # Tag browser
