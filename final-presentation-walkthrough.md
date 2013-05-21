@@ -1,3 +1,10 @@
+# In general
+
+- Values
+   - Find stuff fast
+   - Forum features that make sense on mobile
+   - 
+
 # Questions View
 
 - Explain sidebar (icons and numbers)
