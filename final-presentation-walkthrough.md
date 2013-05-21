@@ -47,7 +47,6 @@
 - Show questions again
 - Mention passing search-phrase to searchbox (easy to refine for keywords now)
    - Type "insert"
-- Show question, scroll around
 - Tap "Tag browser"-tab again to reset
 
 # Users
