@@ -232,6 +232,16 @@ users_votes_query = %Q{
 
 destinationDB.execute(users_votes_query)
 
+#### Create comments_votes
+
+comments_votes_query = %Q{
+  CREATE TABLE "comments_votes" (
+    "comment_id" integer,
+    "user_id" integer,
+    PRIMARY KEY("user_id", "comment_id")
+)
+}
+
 puts "Done".green
 
 
