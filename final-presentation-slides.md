@@ -1,6 +1,6 @@
 # Questions View
 
-- Sidebar contains metainformation about question
+- Sidebar contains metadata about question
 - Sorting hidden by special icon
 - Single Question contains:
    - Header: Title, score status
@@ -27,7 +27,7 @@
 
 # My Profile
 
-- Login by eMail adress
+- Login by eMail address
 - Possibility to persist/remember login
 - Signup using sign up form
 - View your own data (votes, reputation, etc)
