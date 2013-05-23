@@ -2,7 +2,7 @@
 
 ## On how we code
 
-- We embrace peer programming more, especially for code which is being used by various people (non UI related)
+- We embrace pair programming more, especially for code which is being used by various people (non UI related)
    - Emphasize shall be payed on how we implement stuff, it does not mean starring at other peoples' screen during coding
    - We want an agreed consensus so that the implementation is less prone to change after it has been implemented and people actually had a look at what it has to offer
 - Keep branches up to date with master, pull master at least daily
@@ -22,13 +22,13 @@
 
 ## On individual coding
 
-- Coding without lots of documentation and communication works fine as long as components are clearly separated 
+- Coding without lots of documentation and communication works fine as long as components are clearly separated
 - Agreeing on common patterns and abstraction helps integration of separately developed components
 
 ## On our process
 
 - We should've reviewed the complete set of user stories more often
-   - They overlapped, were duplicate and sometimes are quite ambiguous 
+   - They overlapped, were duplicate and sometimes are quite ambiguous
 - Pull requests help other people to gain insight in development of features
    - The team can review ongoing work which leads to early error correction
 
